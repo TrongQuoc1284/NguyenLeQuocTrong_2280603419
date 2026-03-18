@@ -1,0 +1,106 @@
+# 📦 Tên & mô tả ứng dụng
+name: cses
+description: "CSES Apple Store - Modern Flutter E-commerce App"
+
+# 🧱 Ứng dụng nội bộ (không publish lên pub.dev)
+publish_to: 'none'
+
+# 🧩 Phiên bản
+version: 1.0.0+1
+
+# 💻 Môi trường Flutter & Dart
+environment:
+  sdk: ^3.9.2
+
+# =====================================================================
+# 📚 DEPENDENCIES — Các thư viện chính của dự án
+# =====================================================================
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 🔥 AI-Gemini — Hệ thống chatbox AI
+  google_generative_ai: ^0.4.4
+  flutter_dotenv: ^5.1.0
+
+  # 🔥 Firebase — Hệ thống backend (Auth, Database, Storage)
+  firebase_core: ^3.4.0
+  cloud_firestore: ^5.4.4
+  firebase_auth: ^5.3.1
+  firebase_storage: ^12.2.0
+
+  # ☁️ Cloudinary — Dịch vụ lưu trữ ảnh thay thế Firebase Storage
+  cloudinary_public: ^0.23.1
+
+  # 🔑 Google Sign-In — Đăng nhập bằng tài khoản Google
+  google_sign_in: ^6.2.1
+
+  # 💡 State Management — Quản lý trạng thái bằng Provider
+  provider: ^6.1.2
+
+  # 💾 Local Database & Utilities — Bộ nhớ cục bộ
+  sqflite: ^2.3.3
+  path: ^1.9.0
+  path_provider: ^2.1.5
+  shared_preferences: ^2.2.3
+
+  # 🖼️ Image Handling — Quản lý ảnh, bộ nhớ cache, chọn ảnh
+  image_picker: ^1.2.0
+  cached_network_image: ^3.3.1
+  mime: ^1.0.5
+
+  # 💅 UI & Fonts — Biểu tượng, phông chữ và đa ngôn ngữ
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  intl: ^0.20.2
+  flutter_localizations:
+    sdk: flutter
+
+  # 📊 Biểu đồ / Báo cáo — Thống kê doanh thu, đơn hàng
+  fl_chart: ^0.68.0
+
+  # 🌍 HTTP / API — Kết nối REST API ngoài
+  http: ^1.2.2
+
+  # 📬 URL Launcher — Mở email hỗ trợ, liên kết ngoài
+  url_launcher: ^6.3.0
+  diacritic: ^0.1.6
+
+  # ======================= 🌐 MAP FREE (OpenStreetMap) =======================
+  # 🗺️ Hiển thị bản đồ OSM miễn phí
+  flutter_map: ^7.0.2
+  # 📍 Kiểu dữ liệu LatLng cho flutter_map
+  latlong2: ^0.9.1
+  # 🧭 (Tuỳ chọn) Lấy vị trí hiện tại của thiết bị
+  geolocator: ^13.0.1
+  # ==========================================================================
+
+# =====================================================================
+# 🧪 DEV DEPENDENCIES — Thư viện dùng khi phát triển / test
+# =====================================================================
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0   # Quy tắc code chuẩn Flutter
+
+# =====================================================================
+# 🎨 FLUTTER SECTION — Cấu hình giao diện & tài nguyên
+# =====================================================================
+flutter:
+  uses-material-design: true   # Kích hoạt Material Icons
+
+  # 🖼️ Tài nguyên ảnh và dữ liệu của app
+  assets:
+    - assets/google_logo.png        # Logo đăng nhập Google (trang Login)
+    - assets/config/env.json        # Cấu hình ENV cho Web/Mobile
+    # - assets/fonts/               # (Tuỳ chọn) Nếu tự bundle font offline, bỏ comment và thêm file .ttf tại đây
+
+  # (Tuỳ chọn) Nếu muốn nhúng font để tránh lỗi GoogleFonts runtime-fetching
+  # fonts:
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Regular.ttf
+  #       - asset: assets/fonts/Inter-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/Inter-Bold.ttf
+  #         weight: 700
